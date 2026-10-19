@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+<title>Asia Trip 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#B23A2E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Asia 2026">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&family=Nunito:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: phone-first app shell, lacquer header with a soft wave pattern, rounded paper cards, fixed bottom tab bar. Rice paper, cinnabar lacquer, jade and temple gold. */
+:root{
+  --bg:#FAF3E8; --surface:#FFFDF8; --sunk:#F4EADA; --ink:#3B2A22; --muted:#8B776A; --line:#ECDFCC;
+  --lacquer:#B23A2E; --on-lacquer:#FFF7EE; --jade:#3D7C67; --gold:#C8963A; --accent:#B23A2E; --good:#3D7C67;
+  --warn:#B23A2E; --warn-bg:#FBE8DF; --shadow:0 1px 2px rgba(80,45,25,.06),0 6px 18px rgba(80,45,25,.07);
+  --display:"Shippori Mincho","Songti SC",Georgia,serif;
+  --body:"Nunito",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"DM Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1D1613; --surface:#28201B; --sunk:#322720; --ink:#F3E8DA; --muted:#B8A493; --line:#3D3029;
+  --lacquer:#9E3328; --on-lacquer:#FFF3E6; --jade:#7DBFA5; --gold:#E3B665; --accent:#E8806B; --good:#5FA98C;
+  --warn:#EE8D74; --warn-bg:#3A231C; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 18px rgba(0,0,0,.25); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1D1613; --surface:#28201B; --sunk:#322720; --ink:#F3E8DA; --muted:#B8A493; --line:#3D3029;
+  --lacquer:#9E3328; --on-lacquer:#FFF3E6; --jade:#7DBFA5; --gold:#E3B665; --accent:#E8806B; --good:#5FA98C;
+  --warn:#EE8D74; --warn-bg:#3A231C; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 18px rgba(0,0,0,.25); color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--lacquer)}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;color:var(--on-lacquer);background-color:var(--lacquer);
+  background-image:radial-gradient(circle at 50% 100%,transparent 9px,rgba(255,240,220,.10) 10px,transparent 11px,transparent 15px,rgba(255,240,220,.10) 16px,transparent 17px);
+  background-size:36px 18px;border-radius:0 0 20px 20px;box-shadow:0 4px 14px rgba(120,40,25,.18)}
+.top-in{max-width:620px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));padding-block:14px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.top h1{margin:0;font-family:var(--display);font-weight:700;font-size:26px;line-height:1.05}
+.top .sub{font-size:13px;opacity:.85;margin-top:2px;letter-spacing:.02em}
+.top .badge{background:var(--on-lacquer);color:var(--lacquer);font-weight:700;font-size:13px;padding:5px 11px;border-radius:999px;white-space:nowrap}
+
+main{max-width:620px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px calc(96px + env(safe-area-inset-bottom,0px))}
+section.view{display:flex;flex-direction:column;gap:16px}
+
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--surface);box-shadow:0 -4px 18px rgba(80,45,25,.08);border-radius:20px 20px 0 0;padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.tabs-in{max-width:620px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+.tabs button{background:none;border:0;padding:10px 2px 12px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:12px;font-weight:700;color:var(--muted)}
+.tabs button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tabs button[aria-current="page"]{color:var(--lacquer)}
+.tabs button[aria-current="page"] svg{fill:color-mix(in srgb,var(--lacquer) 14%,transparent)}
+
+h2.sec{margin:6px 0 0;font-family:var(--display);font-weight:700;font-size:22px;text-wrap:balance}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+
+.strip{display:flex;gap:8px;overflow-x:auto;padding:2px 4px 8px;margin-inline:-4px;scrollbar-width:none}
+.chip{flex:0 0 auto;border:0;background:var(--surface);box-shadow:var(--shadow);border-radius:14px;padding:8px 12px;text-align:left;min-width:74px}
+.chip .d{font-size:12px;color:var(--muted);font-weight:600}
+.chip .c{font-family:var(--display);font-weight:700;font-size:15px;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--lacquer);color:var(--on-lacquer)}
+.chip[aria-pressed="true"] .d{color:inherit;opacity:.8}
+
+.dayhead{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.dayhead .city{font-family:var(--display);font-weight:800;font-size:36px;line-height:1.05}
+.dayhead .local{font-family:var(--display);font-size:18px;color:var(--gold);margin-left:8px;font-weight:600}
+.dayhead .date{font-size:14px;color:var(--muted);margin-top:2px;font-weight:600}
+.cc{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--sunk);color:var(--muted)}
+.cc i{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.cc.TH i{background:var(--gold)} .cc.VN i{background:var(--jade)} .cc.HK i,.cc.CN i{background:var(--lacquer)}
+
+.alert{background:var(--warn-bg);color:var(--ink);padding:12px 14px;font-size:14px;border-radius:14px}
+.alert b{color:var(--warn)}
+
+.tl{display:flex;flex-direction:column;background:var(--surface);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.row{display:grid;grid-template-columns:50px 1fr auto;gap:10px;padding:13px 14px;border-top:1px solid var(--line);align-items:start}
+.row:first-child{border-top:0}
+.row .time{font-family:var(--mono);font-size:13px;font-weight:500;padding-top:2px;color:var(--muted)}
+.row .body{min-width:0}
+.row .kind{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.row.ticket .kind{color:var(--gold)}
+.row.ticket .time{color:var(--ink)}
+.row .title{font-weight:700}
+.row .detail{font-size:14px;color:var(--muted)}
+.row.done .title{text-decoration:line-through;color:var(--muted)}
+.fav{color:var(--gold);font-size:13px;margin-left:4px}
+.tag{display:inline-block;font-size:11px;font-weight:700;background:var(--sunk);color:var(--muted);padding:1px 8px;border-radius:999px;margin-left:6px;vertical-align:1px}
+.tag.no{background:var(--warn-bg);color:var(--warn)}
+.check{width:28px;height:28px;border:1.5px solid var(--line);border-radius:50%;background:var(--surface);display:grid;place-items:center;padding:0;flex:0 0 auto}
+.check svg{width:14px;height:14px;stroke:var(--surface);stroke-width:3;fill:none}
+.check[aria-pressed="true"]{background:var(--jade);border-color:var(--jade)}
+.code{display:inline-flex;align-items:center;gap:8px;margin-top:6px;font-family:var(--mono);font-size:14px;background:var(--sunk);padding:3px 4px 3px 10px;border-radius:999px}
+.code button{border:0;background:var(--surface);border-radius:999px;font-size:12px;padding:3px 10px;font-weight:700;font-family:var(--body)}
+.addcode{margin-top:6px;border:1px dashed var(--line);background:transparent;border-radius:999px;font-size:13px;font-weight:700;color:var(--accent);padding:3px 12px}
+.inlinecode{display:flex;gap:8px;margin-top:8px}
+.inlinecode input{flex:1;min-width:0;font-family:var(--mono)}
+.inlinecode button{border:0;background:var(--lacquer);color:var(--on-lacquer);border-radius:10px;padding:0 14px;font-weight:700}
+
+.subhead{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:12px 14px 0}
+
+textarea,input[type=text]{width:100%;background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;font-size:16px}
+textarea{min-height:84px;resize:vertical}
+label.fld{display:flex;flex-direction:column;gap:4px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+label.fld input{font-family:var(--mono);letter-spacing:0;text-transform:none;color:var(--ink);padding:9px 11px;font-weight:500}
+
+.next{background:linear-gradient(140deg,var(--jade),color-mix(in srgb,var(--jade) 72%,#1d3a30));color:#FBF6EC;border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:6px;box-shadow:var(--shadow)}
+.next .eyebrow{color:inherit;opacity:.8}
+.next .big{font-family:var(--display);font-weight:800;font-size:28px;line-height:1.15}
+.next .t{font-size:15px;opacity:.95}
+.next .code{background:rgba(255,255,255,.16);color:inherit}
+.next .code button{background:#FBF6EC;color:#2c4b40}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mini{background:var(--surface);border:0;box-shadow:var(--shadow);border-radius:16px;padding:12px 14px;min-width:0;color:var(--ink)}
+.mini .v{font-weight:700;margin-top:2px}
+
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{border:0;background:var(--surface);box-shadow:var(--shadow);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700}
+.seg button[aria-pressed="true"]{background:var(--lacquer);color:var(--on-lacquer)}
+.pass{background:var(--surface);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.pass .route{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:8px;padding:16px 16px 10px}
+.pass .ap{font-family:var(--display);font-weight:800;font-size:32px;line-height:1}
+.pass .ap.r{text-align:right}
+.pass .when{font-size:13px;color:var(--muted);margin-top:4px;font-weight:600}
+.pass .mid{font-size:12px;color:var(--gold);text-align:center;padding-bottom:6px;max-width:120px;font-weight:700}
+.pass .carrier{padding:0 16px 12px;font-weight:700;font-size:15px}
+.pass .carrier span{font-weight:400;color:var(--muted)}
+.pass .stub{border-top:1.5px dashed var(--line);background:var(--sunk);padding:12px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.pass .stub.one{grid-template-columns:1fr}
+.hotelname{font-family:var(--display);font-weight:800;font-size:22px;line-height:1.15}
+
+.foodcity{background:var(--surface);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.foodcity h3{margin:0;padding:14px 16px;font-family:var(--display);font-weight:800;font-size:20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.foodcity h3 .local{color:var(--gold);font-size:15px;font-weight:600;margin-left:6px}
+.foodcity h3 small{font-family:var(--body);font-weight:700;font-size:12px;color:var(--muted)}
+.food{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 16px;border-top:1px solid var(--line)}
+.food:first-of-type{border-top:0}
+.food .n{min-width:0}
+.food .n small{display:block;color:var(--muted);font-size:13px}
+a.map{flex:0 0 auto;font-size:13px;font-weight:700;color:var(--accent);text-decoration:none;background:var(--sunk);padding:5px 12px;border-radius:999px}
+
+.card{background:var(--surface);border-radius:18px;box-shadow:var(--shadow);padding:16px;display:flex;flex-direction:column;gap:12px}
+.doc{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}
+.doc .t{font-weight:700}
+.doc .d{font-size:14px;color:var(--muted)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:7px 8px;border-top:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;border-top:0}
+td.mono{white-space:nowrap}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:0;background:var(--lacquer);color:var(--on-lacquer);border-radius:12px;padding:10px 16px;font-weight:700;font-size:15px}
+.btn.ghost{background:var(--sunk);color:var(--ink)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(88px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:999px;font-size:14px;font-weight:600;z-index:9;max-width:90vw;text-align:center}
+@media (prefers-reduced-motion:no-preference){.view{animation:in .22s ease-out}@keyframes in{from{opacity:.5;transform:translateY(5px)}to{opacity:1;transform:none}}}
+@media (max-width:380px){.pass .ap{font-size:26px}.dayhead .city{font-size:30px}}
+</style></head><body>
+
+<header class="top"><div class="top-in">
+  <div><h1>Asia 2026</h1><div class="sub">2 – 18 Nov · Thailand · Vietnam · Hong Kong · China</div></div>
+  <div class="badge" id="badge">—</div>
+</div></header>
+
+<main id="main"></main>
+<div class="toast" id="toast" hidden></div>
+
+<nav class="tabs" aria-label="Sections"><div class="tabs-in">
+  <button data-tab="today"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>Today</button>
+  <button data-tab="days"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Itinerary</button>
+  <button data-tab="book"><svg viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4z"/><path d="M14 6v12" stroke-dasharray="2 2"/></svg>Bookings</button>
+  <button data-tab="food"><svg viewBox="0 0 24 24"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 21V3c-2 1-3 4-3 7s1 3 3 3"/></svg>Halal food</button>
+  <button data-tab="info"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M9 17h6"/></svg>Essentials</button>
+</div></nav>
+
+<script>
+// ---------- Trip data ----------
+const FLIGHTS={
+ F1:{from:"JFK",to:"HKT",dep:"Tue 3 Nov 10:20",arr:"Wed 4 Nov 18:55",carrier:"Qatar Airways",note:"Connects in Doha (DOH)",mid:"via DOH"},
+ F2:{from:"HKT",to:"DMK",dep:"Fri 6 Nov 11:45",arr:"Fri 6 Nov 13:10",carrier:"AirAsia",note:"Lands at Don Mueang (DMK), not Suvarnabhumi"},
+ F3:{from:"DMK",to:"HAN",dep:"Sun 8 Nov 09:55",arr:"Sun 8 Nov 11:50",carrier:"Thai AirAsia",note:"Departs Don Mueang, the same airport you arrived at"},
+ F4:{from:"HAN",to:"HKG",dep:"Tue 10 Nov 10:30",arr:"Tue 10 Nov 13:30",carrier:"Vietnam Airlines",note:"Clock jumps +1 hr on arrival"},
+ F5:{from:"HKG",to:"PKX",dep:"Thu 12 Nov 12:55",arr:"Thu 12 Nov 15:55",carrier:"China Eastern",note:"Beijing Daxing is about 1 hr from the city"},
+ F6:{from:"PKX",to:"CKG",dep:"Sat 14 Nov 11:40",arr:"Sat 14 Nov 14:35",carrier:"China Southern",note:"Arrives Chongqing Jiangbei T3"},
+ F7:{from:"CAN",to:"HKT",dep:"Tue 17 Nov 13:35",arr:"Tue 17 Nov 16:25",carrier:"China Southern",note:"Departs Guangzhou Baiyun T2"},
+ F8:{from:"HKT",to:"JFK",dep:"Tue 17 Nov 20:30",arr:"Wed 18 Nov 08:00",carrier:"Qatar Airways",note:"Connects in Doha (DOH)",mid:"via DOH"}
+};
+const TRAINS={
+ T1:{from:"Washington Union Stn",to:"New York Penn Stn",dep:"Mon 2 Nov 09:50",arr:"Mon 2 Nov 12:54",carrier:"Amtrak 2106",fa:"WAS",ta:"NYP"},
+ T2:{from:"Hong Kong West Kowloon",to:"Guangzhou South",dep:"Wed 11 Nov 10:02",arr:"Wed 11 Nov 11:10",carrier:"High-speed G918",fa:"XJA",ta:"GZS",note:"Mainland immigration happens inside West Kowloon station. Arrive 45+ min early."},
+ T3:{from:"Guangzhou South",to:"Hong Kong West Kowloon",dep:"Wed 11 Nov 21:28",arr:"Wed 11 Nov 22:33",carrier:"High-speed G6587",fa:"GZS",ta:"XJA"},
+ T4:{from:"Chongqing West",to:"Guangzhou South",dep:"Mon 16 Nov 08:33",arr:"Mon 16 Nov 14:26",carrier:"High-speed G3711",fa:"CQW",ta:"GZS"}
+};
+const TAXIS={
+ X1:{when:"Wed 4 Nov 18:55",route:"Phuket Airport → Avista Hideaway Phuket Patong",prov:"Avista Hotel"},
+ X2:{when:"Sat 14 Nov 15:10",route:"Chongqing Jiangbei Airport T3 → SEYA Panoramic Hotel",prov:"Trip.com"},
+ X3:{when:"Tue 17 Nov 10:30",route:"Ritz-Carlton Guangzhou → Guangzhou Baiyun Airport T2",prov:"Trip.com"}
+};
+const HOTELS={
+ H1:{city:"New York",name:"DoubleTree JFK",in:"Mon 2 Nov",out:"Tue 3 Nov",n:1},
+ H2:{city:"Phuket",name:"Avista Hideaway Phuket Patong",in:"Wed 4 Nov",out:"Fri 6 Nov",n:2},
+ H3:{city:"Bangkok",name:"Kimpton Maa-Lai Bangkok",in:"Fri 6 Nov",out:"Sun 8 Nov",n:2},
+ H4:{city:"Hanoi",name:"GM Premium Hotel",in:"Sun 8 Nov",out:"Tue 10 Nov",n:2},
+ H5:{city:"Hong Kong",name:"W Hong Kong",in:"Tue 10 Nov",out:"Thu 12 Nov",n:2},
+ H6:{city:"Beijing",name:"Hotel Éclat Beijing",in:"Thu 12 Nov",out:"Sat 14 Nov",n:2},
+ H7:{city:"Chongqing",name:"SEYA (Iseya) Panoramic Hotel",in:"Sat 14 Nov",out:"Mon 16 Nov",n:2},
+ H8:{city:"Guangzhou",name:"The Ritz-Carlton, Guangzhou",in:"Mon 16 Nov",out:"Tue 17 Nov",n:1}
+};
+
+// k: flight | train | taxi | hotel | act | food
+const DAYS=[
+ {date:"2026-11-02",city:"New York",cc:"US",tz:-5,hotel:"H1",items:[
+  {t:"09:50",k:"train",ref:"T1",title:"Amtrak 2106 to New York",sub:"Union Station → Penn Station, arrives 12:54"},
+  {t:"",k:"hotel",ref:"H1",title:"Check in: DoubleTree JFK",sub:"Get to JFK area from Penn Station"}]},
+ {date:"2026-11-03",city:"In transit",cc:"✈",tz:-5,items:[
+  {t:"10:20",k:"flight",ref:"F1",title:"QR · JFK → Phuket via Doha",sub:"Lands Wed 4 Nov 18:55 Phuket time"}],
+  alerts:["Thailand arrival card (TDAC) is filed online before arrival. Do it in the 3 days before you land."]},
+ {date:"2026-11-04",city:"Phuket",cc:"TH",tz:7,hotel:"H2",items:[
+  {t:"18:55",k:"flight",ref:"F1",title:"Land at Phuket (HKT)",sub:"Qatar Airways from Doha"},
+  {t:"18:55",k:"taxi",ref:"X1",title:"Hotel car to Avista Hideaway",sub:"Arranged by Avista Hotel"},
+  {t:"",k:"hotel",ref:"H2",title:"Check in: Avista Hideaway Phuket Patong"},
+  {t:"",k:"act",title:"Chillva Market or Patong Bangla Night Market",opt:1},
+  {t:"",k:"act",title:"Dinner and relax at the hotel"}]},
+ {date:"2026-11-05",city:"Phuket",cc:"TH",tz:7,hotel:"H2",items:[
+  {t:"07:30",k:"act",title:"Phang Nga Bay + canoeing tour",sub:"Pickup 07:30 · tour 08:00 to 18:00"},
+  {t:"19:00",k:"act",title:"Phuket Old Town + dinner",sub:"19:00 to 22:00"}]},
+ {date:"2026-11-06",city:"Bangkok",cc:"TH",tz:7,hotel:"H3",items:[
+  {t:"11:45",k:"flight",ref:"F2",title:"AirAsia · Phuket → Bangkok DMK",sub:"Arrives 13:10 at Don Mueang"},
+  {t:"",k:"hotel",ref:"H3",title:"Check in: Kimpton Maa-Lai"},
+  {t:"",k:"act",title:"Wat Pho"},
+  {t:"",k:"act",title:"Wat Arun"},
+  {t:"",k:"act",title:"Wat Paknam"},
+  {t:"",k:"act",title:"ChocolateVille"},
+  {t:"",k:"act",title:"ICONSIAM"},
+  {t:"",k:"food",title:"Dinner at MBK Center"}]},
+ {date:"2026-11-07",city:"Bangkok",cc:"TH",tz:7,hotel:"H3",items:[
+  {t:"",k:"act",title:"Siam Center"},
+  {t:"",k:"food",title:"Terminal 21 food court"},
+  {t:"",k:"act",title:"Central Park (new landmark)"},
+  {t:"",k:"act",title:"Asiatique The Riverfront"},
+  {t:"",k:"act",title:"Rajadamnern Stadium"},
+  {t:"",k:"food",title:"Dinner"}]},
+ {date:"2026-11-08",city:"Hanoi",cc:"VN",tz:7,hotel:"H4",items:[
+  {t:"09:55",k:"flight",ref:"F3",title:"Thai AirAsia · Bangkok → Hanoi",sub:"From Don Mueang (DMK) · arrives 11:50"},
+  {t:"",k:"hotel",ref:"H4",title:"Check in: GM Premium Hotel"},
+  {t:"",k:"act",title:"Train Street",sub:"Coffee and explore"},
+  {t:"",k:"act",title:"Hoan Kiem Lake"},
+  {t:"",k:"act",title:"Ngoc Son Temple"},
+  {t:"",k:"act",title:"Temple of Literature"},
+  {t:"",k:"act",title:"Tran Quoc Pagoda"},
+  {t:"",k:"act",title:"Dong Xuan Market"},
+  {t:"",k:"act",title:"Hang Da Market"}]},
+ {date:"2026-11-09",city:"Hanoi",cc:"VN",tz:7,hotel:"H4",items:[
+  {t:"07:05",k:"act",title:"Ninh Binh: Hoa Lu, Trang An and Mua Cave tour",sub:"Pickup 07:05 · full day"}]},
+ {date:"2026-11-10",city:"Hong Kong",cc:"HK",tz:8,hotel:"H5",items:[
+  {t:"10:30",k:"flight",ref:"F4",title:"Vietnam Airlines · Hanoi → Hong Kong",sub:"Arrives 13:30 HK time (+1 hr)"},
+  {t:"",k:"hotel",ref:"H5",title:"Check in: W Hong Kong"},
+  {t:"",k:"act",title:"Peak Tram to Victoria Peak"},
+  {t:"",k:"food",title:"Egg tarts from Bakehouse"},
+  {t:"",k:"act",title:"Mong Kok street markets"},
+  {t:"",k:"act",title:"Causeway Bay"},
+  {t:"",k:"act",title:"K11 mall"},
+  {t:"",k:"act",title:"Temple Street Night Market"},
+  {t:"20:00",k:"act",title:"Aqua Luna harbour cruise",sub:"8 pm light show"}]},
+ {date:"2026-11-11",city:"Guangzhou",cc:"CN",tz:8,hotel:"H5",dayTrip:"Day trip from Hong Kong",items:[
+  {t:"10:02",k:"train",ref:"T2",title:"G918 · West Kowloon → Guangzhou South",sub:"Arrives 11:10"},
+  {t:"",k:"act",title:"Dongshankou",fav:1},
+  {t:"",k:"food",title:"Halal lunch: Huimin Restaurant or Baohan Street"},
+  {t:"",k:"act",title:"Yongqing Fang"},
+  {t:"",k:"act",title:"Beijing Road Pedestrian Street",fav:1},
+  {t:"",k:"food",title:"Early dinner, then head to Guangzhou South by 20:45"},
+  {t:"21:28",k:"train",ref:"T3",title:"G6587 · Guangzhou South → West Kowloon",sub:"Arrives 22:33"}],
+  alerts:["<b>Check your China entry for today.</b> Visa-free transit needs onward travel to a different country or region. A Hong Kong → Guangzhou → Hong Kong round trip likely does not qualify, so you may need a Chinese visa for this day trip."],
+  note:"Canton Tower, Huacheng Square and the Rosewood are next to your Ritz-Carlton, so they moved to 16 Nov."},
+ {date:"2026-11-12",city:"Beijing",cc:"CN",tz:8,hotel:"H6",items:[
+  {t:"12:55",k:"flight",ref:"F5",title:"China Eastern · Hong Kong → Beijing Daxing",sub:"Arrives 15:55 · allow ~1 hr to the city"},
+  {t:"17:30",k:"hotel",ref:"H6",title:"Check in: Hotel Éclat",sub:"Chaoyang district"},
+  {t:"18:15",k:"act",title:"Taikoo Li Sanlitun",sub:"Short ride from the hotel"},
+  {t:"19:30",k:"act",title:"Wangfujing Shopping Street"},
+  {t:"",k:"food",title:"Dinner: Shunhe Xiang halal bistro or Hongbinlou"}],
+  note:"Forbidden City, Temple of Heaven and Summer Palace close in the afternoon, so they're listed below as not scheduled."},
+ {date:"2026-11-13",city:"Beijing",cc:"CN",tz:8,hotel:"H6",items:[
+  {t:"10:00",k:"act",title:"Great Wall tour",sub:"Pickup 10:00 · tour until 17:00"},
+  {t:"18:00",k:"food",title:"Niujie halal food street",fav:1,sub:"Dinner"},
+  {t:"19:45",k:"act",title:"Shichahai (Houhai lakes)",sub:"Lit up in the evening"},
+  {t:"20:30",k:"act",title:"Nanluoguxiang hutong"}],
+  unsched:["Forbidden City + Tiananmen Square","Temple of Heaven","Jingshan Park","Summer Palace","Shonen Jump Cafe"]},
+ {date:"2026-11-14",city:"Chongqing",cc:"CN",tz:8,hotel:"H7",items:[
+  {t:"08:45",k:"act",title:"Leave Hotel Éclat for Daxing airport",sub:"Suggested time for an 11:40 flight"},
+  {t:"11:40",k:"flight",ref:"F6",title:"China Southern · Beijing → Chongqing",sub:"Arrives 14:35 at T3"},
+  {t:"15:10",k:"taxi",ref:"X2",title:"Car to SEYA Panoramic Hotel",sub:"Booked on Trip.com"},
+  {t:"",k:"hotel",ref:"H7",title:"Check in: SEYA (Iseya) Panoramic Hotel"},
+  {t:"",k:"food",title:"Jiaochangkou halal food street",sub:"Halal hotpot is here too"},
+  {t:"",k:"act",title:"Raffles City Cloudtop skywalk"},
+  {t:"",k:"act",title:"Hongya Cave (Hongyadong)",sub:"Best after dark"},
+  {t:"20:30",k:"act",title:"Drone show"}]},
+ {date:"2026-11-15",city:"Chongqing",cc:"CN",tz:8,hotel:"H7",items:[
+  {t:"",k:"act",title:"Kuixing Building"},
+  {t:"",k:"act",title:"Shibati"},
+  {t:"",k:"act",title:"Yangtze River Cable Car"},
+  {t:"",k:"act",title:"Jiangtang Park and Grand Theatre"},
+  {t:"",k:"act",title:"The Ring"},
+  {t:"",k:"act",title:"Deyi World"},
+  {t:"",k:"act",title:"Nanshan One Tree viewpoint",sub:"Go for sunset"},
+  {t:"",k:"act",title:"Foot spa"},
+  {t:"",k:"food",title:"Dinner on Zhongxing Road",sub:"Or Muslim Mansion"}]},
+ {date:"2026-11-16",city:"Guangzhou",cc:"CN",tz:8,hotel:"H8",items:[
+  {t:"08:33",k:"train",ref:"T4",title:"G3711 · Chongqing West → Guangzhou South",sub:"Arrives 14:26"},
+  {t:"",k:"hotel",ref:"H8",title:"Check in: The Ritz-Carlton"},
+  {t:"",k:"act",title:"Tiyu Xilu malls"},
+  {t:"",k:"act",title:"One Link Plaza"},
+  {t:"",k:"act",title:"Huacheng Square"},
+  {t:"",k:"act",title:"Canton Tower + Bubble Tram",fav:1,sub:"Evening"},
+  {t:"",k:"act",title:"Rosewood bar",sub:"High-rise, desserts"},
+  {t:"",k:"food",title:"Dinner: Bosphorus Restaurant"}]},
+ {date:"2026-11-17",city:"Guangzhou",cc:"CN",tz:8,dayTrip:"Flying home via Phuket",items:[
+  {t:"10:30",k:"taxi",ref:"X3",title:"Car to Baiyun Airport T2",sub:"Booked on Trip.com"},
+  {t:"13:35",k:"flight",ref:"F7",title:"China Southern · Guangzhou → Phuket",sub:"Arrives 16:25 Phuket time"},
+  {t:"20:30",k:"flight",ref:"F8",title:"QR · Phuket → JFK via Doha",sub:"Departs 20:30 Phuket time"}],
+  alerts:["If these flights are on separate tickets, you'll clear Thai immigration and re-check bags in Phuket. File a new TDAC for this entry."]},
+ {date:"2026-11-18",city:"New York",cc:"US",tz:-5,items:[
+  {t:"08:00",k:"flight",ref:"F8",title:"Land at JFK",sub:"Qatar Airways from Doha"}]}
+];
+
+const FOOD=[
+ {city:"Phuket",cn:0,items:[["Raya Restaurant"],["One Chun Restaurant"],["Tunk Ka Cafe"],["Sultan's Grill",0,"Open until 2:30 am"],["Zuri",0,"Open until 2:00 am"],["Marush"],["Masha Halal Cafe"],["Saveena"],["Thyme"]]},
+ {city:"Bangkok",cn:0,items:[["Nuatair",1],["Elbasha"],["Phrigkiao"],["Usman Thai"],["MBK Center food court"]]},
+ {city:"Hanoi",cn:0,items:[["Raja Express"],["Pho Muslim"],["Kachi Kitchen"],["Pizza 4P's",0,"","no"],["Yalla Kebab"],["Mr Kebab"],["Habibi Halal"]]},
+ {city:"Hong Kong",cn:0,items:[["Islam Food",1,"Kowloon City"],["Islamic Centre Canteen"],["Wai Kee"],["Chrisly Cafe"],["Kowloon Muslim-area restaurants",0,"Around the Kowloon Mosque"]]},
+ {city:"Guangzhou",cn:1,items:[["Huimin Restaurant"],["Bosphorus Restaurant"],["Baohan Street restaurants",0,"Muslim area"]]},
+ {city:"Beijing",cn:1,items:[["Niujie halal food street",1],["Shunhe Xiang halal bistro"],["Hamarkand"],["Hongbinlou"]]},
+ {city:"Chongqing",cn:1,items:[["Jiaochangkou halal food street"],["Halal hotpot, Jiaochangkou"],["Muslim Mansion"]]}
+];
+
+const DOCS=[
+ ["pp","Passport valid 6+ months past 18 Nov","Most stops on this route expect it. Check the expiry date now."],
+ ["th","Thailand: arrival card (TDAC)","File online within 3 days before landing. You enter twice: 4 Nov and possibly 17 Nov."],
+ ["vn","Vietnam: e-visa","Most passports, including US, need one. Apply on the official evisa.gov.vn site."],
+ ["cn","China: visa or 240-hour visa-free transit","HK → Beijing … Guangzhou → Phuket fits the transit rules. The 11 Nov HK round trip likely doesn't. Confirm before booking."],
+ ["hk","Hong Kong: entry","US passports are visa-free for short visits."],
+ ["ins","Travel insurance","Save the policy number and the 24-hour claims line in Bookings notes."],
+ ["pay","China payments set up","Link a card to Alipay and WeChat Pay before you go. Cash and foreign cards are often refused."],
+ ["net","Data that works in China","Roaming SIM or an eSIM with built-in VPN. Google, WhatsApp and Gmail are blocked on local Wi-Fi."]
+];
+
+// ---------- Storage ----------
+const KEY="asia26:";
+const store={get(k,d){try{const v=localStorage.getItem(KEY+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(KEY+k,JSON.stringify(v))}catch(e){}}};
+const S={done:store.get("done",{}),notes:store.get("notes",{}),book:store.get("book",{}),docs:store.get("docs",{})};
+function save(k){store.set(k,S[k])}
+
+// ---------- Helpers ----------
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function fmtDate(iso){const d=new Date(iso+"T12:00:00Z");return `${DOW[d.getUTCDay()]} ${d.getUTCDate()} ${MON[d.getUTCMonth()]}`}
+function tzLabel(o){return "UTC"+(o>=0?"+":"−")+Math.abs(o)}
+function localNow(o){const d=new Date(Date.now()+o*3600e3);return{date:d.toISOString().slice(0,10),hm:d.toISOString().slice(11,16)}}
+function mapUrl(q,cn){const e=encodeURIComponent(q);return cn?`https://maps.apple.com/?q=${e}`:`https://www.google.com/maps/search/?api=1&query=${e}`}
+function confOf(ref){return ref&&S.book[ref]&&S.book[ref].conf?S.book[ref].conf:""}
+function toast(m){const t=$("#toast");t.textContent=m;t.hidden=false;clearTimeout(toast._t);toast._t=setTimeout(()=>t.hidden=true,1600)}
+const LOCAL={"Phuket":"ภูเก็ต","Bangkok":"กรุงเทพฯ","Hanoi":"Hà Nội","Hong Kong":"香港","Guangzhou":"广州","Beijing":"北京","Chongqing":"重庆"};
+const CCNAME={TH:"Thailand",VN:"Vietnam",HK:"Hong Kong",CN:"China",US:"USA"};
+let editing=null;
+const KIND={flight:"Flight",train:"Train",taxi:"Car",hotel:"Hotel",act:"Plan",food:"Food"};
+const CHECK='<svg viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7"/></svg>';
+
+function currentDayIndex(){
+  for(let i=0;i<DAYS.length;i++){if(localNow(DAYS[i].tz).date===DAYS[i].date)return i}
+  const now=localNow(-5).date;
+  if(now<DAYS[0].date)return -1;
+  return DAYS.length; // finished
+}
+function itemRow(d,i,it){
+  const id=d.date+"#"+i, done=!!S.done[id], ticket=["flight","train","taxi"].includes(it.k);
+  const conf=confOf(it.ref);
+  return `<div class="row${ticket?" ticket":""}${done?" done":""}">
+   <div class="time">${esc(it.t||"·")}</div>
+   <div class="body"><div class="kind">${KIND[it.k]}</div>
+    <div class="title">${esc(it.title)}${it.fav?'<span class="fav" title="Favored">★</span>':""}${it.opt?'<span class="tag">optional</span>':""}</div>
+    ${it.sub?`<div class="detail">${esc(it.sub)}</div>`:""}
+    ${conf&&editing!==it.ref+"@"+id?`<div class="code">${esc(conf)}<button data-copy="${esc(conf)}">Copy</button><button data-edit="${it.ref}@${id}">Edit</button></div>`:""}
+    ${it.ref&&!conf&&editing!==it.ref+"@"+id?`<button class="addcode" data-edit="${it.ref}@${id}">+ Add confirmation code</button>`:""}
+    ${editing===it.ref+"@"+id?`<div class="inlinecode"><input type="text" id="ic-${id}" value="${esc(conf)}" placeholder="Confirmation code" autocomplete="off" autocapitalize="characters"><button data-savecode="${it.ref}" data-for="ic-${id}">Save</button></div>`:""}
+   </div>
+   <button class="check" aria-pressed="${done}" aria-label="Mark done" data-done="${id}">${CHECK}</button>
+  </div>`;
+}
+function dayBlock(idx){
+  const d=DAYS[idx];
+  const unsched=d.unsched?`<div class="tl"><div class="subhead">Not scheduled · Beijing</div>${d.unsched.map(u=>`<div class="row"><div class="time">—</div><div class="body"><div class="title">${esc(u)}</div><div class="detail">Daytime site. Doesn't fit this stay.</div></div><span></span></div>`).join("")}</div>`:"";
+  return `
+   <div class="dayhead"><div><div class="eyebrow">Day ${idx+1} of ${DAYS.length}${d.dayTrip?" · "+esc(d.dayTrip):""}</div><div class="city">${esc(d.city)}${LOCAL[d.city]?`<span class="local">${LOCAL[d.city]}</span>`:""}</div><div class="date">${fmtDate(d.date)} 2026</div></div><span class="cc ${d.cc}"><i></i>${CCNAME[d.cc]?CCNAME[d.cc]+" · ":""}${tzLabel(d.tz)}</span></div>
+   ${(d.alerts||[]).map(a=>`<div class="alert">${a}</div>`).join("")}
+   ${d.note?`<div class="small muted">${esc(d.note)}</div>`:""}
+   <div class="tl">${d.items.map((it,i)=>itemRow(d,i,it)).join("")}</div>
+   ${unsched}
+   <label class="fld" for="note-${d.date}">Notes for this day<textarea id="note-${d.date}" data-note="${d.date}" placeholder="Reservations, reminders, ideas">${esc(S.notes[d.date]||"")}</textarea></label>`;
+}
+
+// ---------- Views ----------
+let tab=store.get("tab","today"), dayIdx=null, bookSeg=store.get("seg","flights");
+
+function viewToday(){
+  const ci=currentDayIndex();
+  if(ci===-1){
+    const start=new Date("2026-11-02T09:50:00-05:00"), days=Math.ceil((start-Date.now())/864e5);
+    const nxt=DAYS[0].items[0];
+    return `<div class="next"><div class="eyebrow">Trip starts in</div><div class="big">${days} day${days===1?"":"s"}</div>
+      <div class="t">First up: ${esc(nxt.title)} · Mon 2 Nov ${esc(nxt.t)}</div></div>
+      <div class="pair"><div class="mini"><div class="eyebrow">Cities</div><div class="v">8 · 4 countries</div></div><div class="mini"><div class="eyebrow">Flights · trains</div><div class="v mono">8 · 4</div></div></div>
+      ${docSummary()}
+      <h2 class="sec">Day 1 preview</h2>${dayBlock(0)}`;
+  }
+  if(ci===DAYS.length) return `<div class="next"><div class="eyebrow">Trip complete</div><div class="big">Welcome home</div></div>`;
+  const d=DAYS[ci], now=localNow(d.tz).hm;
+  let nx=null;
+  d.items.forEach((it,i)=>{if(!nx&&!S.done[d.date+"#"+i]&&(!it.t||it.t>=now))nx=it});
+  const h=d.hotel?HOTELS[d.hotel]:null, conf=nx?confOf(nx.ref):"";
+  return `${nx?`<div class="next"><div class="eyebrow">Next up · ${esc(d.city)} ${now} local</div><div class="big">${esc(nx.title)}</div>
+     <div class="t">${nx.t?esc(nx.t)+" · ":""}${esc(nx.sub||KIND[nx.k])}</div>${conf?`<div class="code">${esc(conf)}<button data-copy="${esc(conf)}">Copy</button></div>`:""}</div>`:""}
+   <div class="pair"><div class="mini"><div class="eyebrow">Tonight</div><div class="v">${h?esc(h.name):"In transit"}</div></div>
+   <div class="mini"><div class="eyebrow">Home (Eastern)</div><div class="v mono">${localNow(-5).hm}</div></div></div>
+   ${dayBlock(ci)}`;
+}
+function docSummary(){const n=DOCS.filter(x=>S.docs[x[0]]).length;return `<button class="mini" style="text-align:left" data-tab="info"><div class="eyebrow">Documents ready</div><div class="v mono">${n} of ${DOCS.length} checked</div></button>`}
+function viewDays(){
+  if(dayIdx===null){const c=currentDayIndex();dayIdx=c<0?0:Math.min(c,DAYS.length-1)}
+  return `<div class="strip" id="strip">${DAYS.map((d,i)=>`<button class="chip" aria-pressed="${i===dayIdx}" data-day="${i}"><div class="d">${fmtDate(d.date)}</div><div class="c">${esc(d.city)}</div></button>`).join("")}</div>${dayBlock(dayIdx)}`;
+}
+function fld(ref,key,label,ph){const v=(S.book[ref]||{})[key]||"";return `<label class="fld" for="b-${ref}-${key}">${label}<input type="text" id="b-${ref}-${key}" data-book="${ref}" data-key="${key}" value="${esc(v)}" placeholder="${ph||""}" autocomplete="off"></label>`}
+function viewBook(){
+  const segs=[["flights","Flights"],["trains","Trains"],["cars","Cars"],["hotels","Hotels"]];
+  let body="";
+  if(bookSeg==="flights") body=Object.entries(FLIGHTS).map(([id,f])=>`<div class="pass">
+    <div class="route"><div><div class="ap">${f.from}</div><div class="when">${f.dep}</div></div><div class="mid">${f.mid||"—"}</div><div><div class="ap r">${f.to}</div><div class="when" style="text-align:right">${f.arr}</div></div></div>
+    <div class="carrier">${esc(f.carrier)} <span>· ${esc(f.note)}</span></div>
+    <div class="stub">${fld(id,"conf","Confirmation","e.g. 6KJ2TQ")}${fld(id,"flt","Flight no.","")}${fld(id,"seat","Seat","")}${fld(id,"term","Terminal","")}</div></div>`).join("");
+  if(bookSeg==="trains") body=Object.entries(TRAINS).map(([id,t])=>`<div class="pass">
+    <div class="route"><div><div class="ap">${t.fa}</div><div class="when">${esc(t.from)}<br>${t.dep}</div></div><div class="mid">→</div><div><div class="ap r">${t.ta}</div><div class="when" style="text-align:right">${esc(t.to)}<br>${t.arr}</div></div></div>
+    <div class="carrier">${esc(t.carrier)}${t.note?` <span>· ${esc(t.note)}</span>`:""}</div>
+    <div class="stub">${fld(id,"conf","Booking ref","")}${fld(id,"coach","Coach","")}${fld(id,"seat","Seat","")}</div></div>`).join("");
+  if(bookSeg==="cars") body=Object.entries(TAXIS).map(([id,x])=>`<div class="pass">
+    <div style="padding:14px 14px 10px"><div class="eyebrow">${x.when}</div><div class="hotelname" style="font-size:20px;margin-top:4px">${esc(x.route)}</div></div>
+    <div class="carrier"><span>Booked through</span> ${esc(x.prov)}</div>
+    <div class="stub">${fld(id,"conf","Booking ref","")}${fld(id,"phone","Driver / support phone","")}</div></div>`).join("");
+  if(bookSeg==="hotels") body=Object.entries(HOTELS).map(([id,h])=>`<div class="pass">
+    <div style="padding:14px 14px 10px"><div class="eyebrow">${esc(h.city)} · ${h.n} night${h.n>1?"s":""}</div><div class="hotelname" style="margin-top:4px">${esc(h.name)}</div>
+    <div class="when mono" style="margin-top:6px">In ${h.in} → Out ${h.out}</div></div>
+    <div class="stub">${fld(id,"conf","Confirmation","")}${fld(id,"phone","Phone","")}</div>
+    <div class="stub one" style="border-top:0;padding-top:0">${fld(id,"addr","Address (local script for taxis)","Paste from the booking")}
+    <div><a class="map" href="${mapUrl(h.name+" "+h.city,["Beijing","Chongqing","Guangzhou"].includes(h.city))}" target="_blank" rel="noopener">Open in maps ↗</a></div></div></div>`).join("");
+  return `<h2 class="sec">Bookings</h2><div class="seg">${segs.map(([k,l])=>`<button aria-pressed="${k===bookSeg}" data-seg="${k}">${l}</button>`).join("")}</div>
+   <div class="small muted">Codes you enter here show up on the matching itinerary item with a Copy button.</div>${body}`;
+}
+function viewFood(){
+  return `<h2 class="sec">Halal food</h2><div class="small muted">★ marks your favorites. China links open Apple Maps, which works there.</div>`+
+  FOOD.map(c=>`<div class="foodcity"><h3><span>${esc(c.city)}<span class="local">${LOCAL[c.city]||""}</span></span><small>${c.items.length} spots</small></h3>${c.items.map(([n,f,note,tag])=>`<div class="food"><div class="n"><span style="font-weight:600">${esc(n)}</span>${f?'<span class="fav">★</span>':""}${tag==="no"?'<span class="tag no">not halal</span>':""}${note?`<small>${esc(note)}</small>`:""}</div><a class="map" href="${mapUrl(n+" "+c.city,c.cn)}" target="_blank" rel="noopener">Map ↗</a></div>`).join("")}</div>`).join("");
+}
+function viewInfo(){
+  return `<h2 class="sec">Documents</h2>
+  <div class="card">${DOCS.map(([id,t,d])=>`<div class="doc"><button class="check" aria-pressed="${!!S.docs[id]}" data-doc="${id}" aria-label="Mark ready">${CHECK}</button><div><div class="t">${esc(t)}</div><div class="d">${esc(d)}</div></div></div>`).join("")}
+  <div class="small muted">Status only. Keep passport and card numbers in Apple Wallet or a password manager, not here.</div></div>
+  <h2 class="sec">Time and money</h2>
+  <div class="card"><div class="tbl"><table><thead><tr><th>Place</th><th>Time</th><th>vs Eastern</th><th>Currency</th></tr></thead><tbody>
+   <tr><td>Thailand</td><td class="mono">UTC+7</td><td class="mono">+12 h</td><td>Baht (THB)</td></tr>
+   <tr><td>Vietnam</td><td class="mono">UTC+7</td><td class="mono">+12 h</td><td>Dong (VND)</td></tr>
+   <tr><td>Hong Kong</td><td class="mono">UTC+8</td><td class="mono">+13 h</td><td>HK dollar (HKD)</td></tr>
+   <tr><td>Mainland China</td><td class="mono">UTC+8</td><td class="mono">+13 h</td><td>Yuan (CNY)</td></tr>
+  </tbody></table></div><div class="small muted">US clocks fall back on 1 Nov, so Eastern is UTC−5 for the whole trip.</div></div>
+  <h2 class="sec">Emergency numbers</h2>
+  <div class="card"><div class="tbl"><table><thead><tr><th>Country</th><th>Police</th><th>Ambulance</th><th>Other</th></tr></thead><tbody>
+   <tr><td>Thailand</td><td class="mono">191</td><td class="mono">1669</td><td>Tourist police <span class="mono">1155</span></td></tr>
+   <tr><td>Vietnam</td><td class="mono">113</td><td class="mono">115</td><td>Fire <span class="mono">114</span></td></tr>
+   <tr><td>Hong Kong</td><td class="mono">999</td><td class="mono">999</td><td></td></tr>
+   <tr><td>China</td><td class="mono">110</td><td class="mono">120</td><td>Fire <span class="mono">119</span></td></tr>
+  </tbody></table></div></div>
+  <h2 class="sec">Apps to install</h2>
+  <div class="card small"><div><b>Thailand and Vietnam:</b> Grab for rides and food.</div><div><b>Hong Kong:</b> Octopus card in Apple Wallet for MTR, trams, Peak Tram.</div><div><b>China:</b> Alipay, WeChat, DiDi (in English inside Alipay), Trip.com, and Apple Maps or Amap for directions.</div></div>
+  <h2 class="sec">Share and backup</h2>
+  <div class="card"><div class="small muted">Codes, notes and checkmarks are saved on this phone only. To give them to your wife, tap Copy codes and send her the text. She taps Restore and pastes it. Do the same after you add new codes.</div>
+   <div class="btns"><button class="btn" data-act="export">Copy codes and notes</button><button class="btn ghost" data-act="showimport">Restore from pasted text</button></div>
+   <div id="imp" hidden><label class="fld" for="impbox">Paste backup<textarea id="impbox"></textarea></label><div class="btns" style="margin-top:8px"><button class="btn" data-act="import">Restore</button></div></div>
+   <textarea id="expbox" hidden readonly></textarea>
+  </div>`;
+}
+
+function render(){
+  const v={today:viewToday,days:viewDays,book:viewBook,food:viewFood,info:viewInfo}[tab]();
+  $("#main").innerHTML=`<section class="view">${v}</section>`;
+  document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-current",b.dataset.tab===tab?"page":"false"));
+  const ci=currentDayIndex();
+  $("#badge").textContent=ci<0?"Starts 2 Nov":ci>=DAYS.length?"Complete":`Day ${ci+1}/${DAYS.length}`;
+  if(tab==="days"){const c=document.querySelector('.chip[aria-pressed="true"]');if(c)c.scrollIntoView({inline:"center",block:"nearest"})}
+}
+function go(t){tab=t;store.set("tab",t);render();window.scrollTo(0,0)}
+
+document.addEventListener("click",e=>{
+  const b=e.target.closest("button,[data-tab]"); if(!b)return;
+  if(b.dataset.tab){go(b.dataset.tab);return}
+  if(b.dataset.edit){editing=b.dataset.edit;render();const i=document.querySelector(".inlinecode input");if(i)i.focus();return}
+  if(b.dataset.savecode){const r=b.dataset.savecode,v=$("#"+CSS.escape(b.dataset.for)).value.trim();S.book[r]=S.book[r]||{};S.book[r].conf=v;save("book");editing=null;render();toast(v?"Code saved":"Code removed");return}
+  if(b.dataset.day){dayIdx=+b.dataset.day;render();return}
+  if(b.dataset.seg){bookSeg=b.dataset.seg;store.set("seg",bookSeg);render();return}
+  if(b.dataset.done){const id=b.dataset.done;S.done[id]=!S.done[id];if(!S.done[id])delete S.done[id];save("done");render();return}
+  if(b.dataset.doc){const id=b.dataset.doc;S.docs[id]=!S.docs[id];save("docs");render();return}
+  if(b.dataset.copy!==undefined){const txt=b.dataset.copy;
+    navigator.clipboard?.writeText(txt).then(()=>toast("Copied "+txt)).catch(()=>toast(txt));return}
+  if(b.dataset.act==="export"){const data=JSON.stringify({v:1,done:S.done,notes:S.notes,book:S.book,docs:S.docs});
+    navigator.clipboard?.writeText(data).then(()=>toast("Copied. Paste it into a message to your wife.")).catch(()=>{const t=$("#expbox");t.hidden=false;t.value=data;t.select();toast("Select all and copy")});return}
+  if(b.dataset.act==="showimport"){$("#imp").hidden=false;$("#impbox").focus();return}
+  if(b.dataset.act==="import"){try{const d=JSON.parse($("#impbox").value);["done","notes","book","docs"].forEach(k=>{if(d[k]&&typeof d[k]==="object"){S[k]=d[k];save(k)}});toast("Backup restored");render()}catch(err){toast("That text isn't a valid backup. Copy it again and paste the whole thing.")}}
+});
+document.addEventListener("input",e=>{
+  const el=e.target;
+  if(el.dataset.note){S.notes[el.dataset.note]=el.value;save("notes")}
+  if(el.dataset.book){const r=el.dataset.book;S.book[r]=S.book[r]||{};S.book[r][el.dataset.key]=el.value.trim();save("book")}
+});
+render();
+setInterval(()=>{if(tab==="today"&&!document.activeElement.matches("input,textarea"))render()},60000);
+if("serviceWorker" in navigator&&document.querySelector('link[rel="manifest"]')){navigator.serviceWorker.register("sw.js").catch(()=>{})}
+</script>
+
+</body></html>
