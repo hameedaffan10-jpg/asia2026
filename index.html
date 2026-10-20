@@ -20,7 +20,7 @@
   --jade:#2F6B55; --jade-deep:#22503F; --jade-soft:#DDEBDF; --moss:#7E9A55; --gold:#C4963A; --lacquer:#B4452F;
   --on-jade:#FBF5E8; --good:#2F6B55; --warn:#B4452F; --warn-bg:#FAE6DC;
   --sea:#DCEAE6; --land:#EEE5D2; --land-trip:#D5E4CF; --border:#FFFCF5; --route:#B4452F;
-  --urban:#EADBBE; --river:#93C1B9; --road:#FFFCF5; --road-major:#E0B45E;
+  --urban:#EADBBE; --river:#93C1B9; --road:#FFFCF5; --road-major:#E0B45E; --tilefilter:sepia(.18) saturate(.85);
   --shadow:0 1px 2px rgba(70,55,30,.06),0 6px 18px rgba(70,55,30,.07);
   --display:"Shippori Mincho","Songti SC",Georgia,serif;
   --body:"Nunito",-apple-system,"Segoe UI",Roboto,sans-serif;
@@ -30,13 +30,13 @@
   --bg:#171A16; --surface:#21251F; --sunk:#2A2F27; --ink:#EEE8DA; --muted:#A9A391; --line:#343A31;
   --jade:#7CC2A2; --jade-deep:#1F3D32; --jade-soft:#26392F; --moss:#A6C27B; --gold:#E2B864; --lacquer:#E58A70;
   --on-jade:#F5EEDD; --good:#6FB896; --warn:#EE9479; --warn-bg:#3A2620;
-  --sea:#1A2421; --land:#2B2D26; --land-trip:#2F4A3C; --border:#171A16; --route:#E58A70; --urban:#4A4433; --river:#3F6E68; --road:#5A5F50; --road-major:#A5864A;
+  --sea:#1A2421; --land:#2B2D26; --land-trip:#2F4A3C; --border:#171A16; --route:#E58A70; --urban:#4A4433; --river:#3F6E68; --road:#5A5F50; --road-major:#A5864A; --tilefilter:invert(.9) hue-rotate(180deg) saturate(.55) brightness(.95);
   --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 18px rgba(0,0,0,.25); color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#171A16; --surface:#21251F; --sunk:#2A2F27; --ink:#EEE8DA; --muted:#A9A391; --line:#343A31;
   --jade:#7CC2A2; --jade-deep:#1F3D32; --jade-soft:#26392F; --moss:#A6C27B; --gold:#E2B864; --lacquer:#E58A70;
   --on-jade:#F5EEDD; --good:#6FB896; --warn:#EE9479; --warn-bg:#3A2620;
-  --sea:#1A2421; --land:#2B2D26; --land-trip:#2F4A3C; --border:#171A16; --route:#E58A70; --urban:#4A4433; --river:#3F6E68; --road:#5A5F50; --road-major:#A5864A;
+  --sea:#1A2421; --land:#2B2D26; --land-trip:#2F4A3C; --border:#171A16; --route:#E58A70; --urban:#4A4433; --river:#3F6E68; --road:#5A5F50; --road-major:#A5864A; --tilefilter:invert(.9) hue-rotate(180deg) saturate(.55) brightness(.95);
   --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 18px rgba(0,0,0,.25); color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%}
@@ -163,7 +163,7 @@ svg .ndot{stroke:var(--surface);stroke-width:2;vector-effect:non-scaling-stroke}
 .dm .pin circle{stroke:#fff;stroke-width:2} .dm .pin text{fill:#fff;font:800 10px var(--body);text-anchor:middle;dominant-baseline:central}
 .dm .pin.act circle{fill:var(--lacquer)} .dm .pin.home circle{fill:var(--jade)} .dm .pin.sel circle{stroke:var(--gold);stroke-width:3.5}
 .dm .pinline{fill:none;stroke:var(--lacquer);stroke-width:1.4;stroke-dasharray:3 3;opacity:.55}
-.dm image{opacity:1}
+.dm image.tile{filter:var(--tilefilter)}
 .thumb .dm .mlt,.thumb .dm .mlp{display:none}
 
 .alert{background:var(--warn-bg);padding:12px 14px;font-size:14px;border-radius:14px}
@@ -647,12 +647,12 @@ function overview(){
 function tileImgs(m){
   if(!TILES)return "";
   const W=400,H=250,lonR=m.lon0+W/m.k,mBot=m.mt-H/m.k;
-  const z=Math.max(3,Math.min(17,Math.round(Math.log2(360*m.k/150)))),n=2**z,size=360/n*m.k;
+  const z=Math.max(3,Math.min(18,Math.round(Math.log2(360*m.k/130)))),n=2**z,size=360/n*m.k;
   const tx0=Math.floor((m.lon0+180)/360*n),tx1=Math.floor((lonR+180)/360*n),ty0=Math.floor((180-m.mt)/360*n),ty1=Math.floor((180-mBot)/360*n);
-  const style=isDark()?"dark_all":"rastertiles/voyager";let s="";
+  let s="";
   for(let tx=tx0;tx<=tx1;tx++)for(let ty=ty0;ty<=ty1;ty++){
     const x=((tx/n*360-180)-m.lon0)*m.k,y=(m.mt-(180-ty/n*360))*m.k;
-    s+=`<image href="https://${"abcd"[(tx+ty)%4]}.basemaps.cartocdn.com/${style}/${z}/${tx}/${ty}@2x.png" x="${x.toFixed(2)}" y="${y.toFixed(2)}" width="${(size+.4).toFixed(2)}" height="${(size+.4).toFixed(2)}" preserveAspectRatio="none"/>`;
+    s+=`<image class="tile" href="https://tile.openstreetmap.org/${z}/${tx}/${ty}.png" x="${x.toFixed(2)}" y="${y.toFixed(2)}" width="${(size+.4).toFixed(2)}" height="${(size+.4).toFixed(2)}" preserveAspectRatio="none"/>`;
   }
   return s;
 }
@@ -714,7 +714,7 @@ function dayPage(idx,{bar=true}={}){
   const prev=DAYS[idx-1],next=DAYS[idx+1];
   const unsched=d.unsched?`<div class="tl" style="min-height:0"><div class="subhead">If time permits · see from outside</div>${d.unsched.map(u=>`<div class="row" style="grid-template-columns:22px 46px 1fr"><span></span><div class="time">—</div><div class="body"><div class="title">${esc(u)}</div><div class="detail">Closed by evening. If we pass by, we'll take in the outside views.</div></div></div>`).join("")}</div>`:"";
   const map=DAYMAPS[d.date]?`<div class="hero" id="hero" style="view-transition-name:daymap">${dayMap(d)}
-      ${TILES?'<span class="attr">© OpenStreetMap · © CARTO</span>':""}
+      ${TILES?'<span class="attr">© OpenStreetMap contributors</span>':""}
       <div class="legend"><span><span class="pnum">1</span>Plans</span>${pinsOf(d).some(p=>p.cls==="home")?'<span><span class="pnum h">H</span>Hotel</span>':""}</div>
       <a class="open" href="${mapUrl(d.city,CN_CITIES.includes(d.city))}" target="_blank" rel="noopener">Open map ↗</a></div>`
     :d.leg?`<div class="hero" style="view-transition-name:daymap"><div class="pc" style="box-shadow:none;border-radius:0"><div class="thumb" style="aspect-ratio:16/10"><div class="travel">${TRAVEL_ICON[d.leg.m]}<b>${esc(d.leg.t)}</b></div></div></div></div>`:"";
@@ -846,7 +846,6 @@ function viewInfo(){
    <div class="btns"><button class="btn" data-act="export">Copy codes and notes</button><button class="btn ghost" data-act="showimport">Restore from pasted text</button></div>
    <div id="imp" hidden><label class="fld" for="impbox">Paste backup<textarea id="impbox"></textarea></label><div class="btns" style="margin-top:8px"><button class="btn" data-act="import">Restore</button></div></div>
    <textarea id="expbox" hidden readonly></textarea>
-   ${TILES?`<div class="btns"><button class="btn ghost" data-act="savemaps" id="savemaps">Save street maps for offline</button></div>`:""}
    <div id="resetwrap" class="btns"><button class="btn ghost" data-act="askreset">Reset plan order</button></div>
   </div>`;
 }
@@ -1007,7 +1006,7 @@ async function startSync(){
     if(!firebase.apps.length)firebase.initializeApp(SYNC.cfg);
     const db=firebase.firestore();try{await db.enablePersistence({synchronizeTabs:true})}catch(e){}
     await new Promise(r=>{const u=firebase.auth().onAuthStateChanged(x=>{u();r(x)})});
-    if(!firebase.auth().currentUser){try{await firebase.auth().signInAnonymously()}catch(e){}}
+    if(!firebase.auth().currentUser){try{await firebase.auth().signInAnonymously()}catch(e){SYNC.err=e.code||e.message;if(navigator.onLine){SYNC.status="error";updateSyncBadge();return}}}
     SYNC.db=db;SYNC.on=true;
     let first={};
     SYNC_KEYS.forEach(k=>{
@@ -1025,21 +1024,31 @@ async function startSync(){
         if(k==="layout"){S.layout=data&&data.v?JSON.parse(data.v):{};fixLayout();LAST.layout=clone(S.layout)}
         else{S[k]=clone(data||{});LAST[k]=clone(S[k]);if(pending){Object.assign(S[k],pending.set);pending.del.forEach(x=>delete S[k][x])}}
         store.set(k,S[k]);softRender();updateSyncBadge();
-      },()=>{SYNC.status="error";updateSyncBadge()}));
+      },err=>{SYNC.err=(err&&(err.code||err.message))||"unknown";SYNC.status="error";updateSyncBadge()}));
     });
-  }catch(e){SYNC.status="error";updateSyncBadge()}
+  }catch(e){SYNC.err=(e&&(e.code||e.message))||"Couldn't load the sync library. Check the internet connection.";SYNC.status="error";updateSyncBadge()}
 }
-function updateSyncBadge(){const el=$("#syncstat");if(el)el.innerHTML=syncStatusText();const dot=$("#syncdot");if(dot){dot.hidden=!SYNC.on;dot.className="syncdot "+SYNC.status}}
+function updateSyncBadge(){const el=$("#syncstat");if(el){if((el.dataset.s||"")!==SYNC.status&&(SYNC.status==="error"||el.dataset.s==="error")&&tab==="info"){el.dataset.s=SYNC.status;softRender();return}el.dataset.s=SYNC.status;el.textContent=syncStatusText()}const dot=$("#syncdot");if(dot){dot.hidden=!SYNC.on;dot.className="syncdot "+SYNC.status}}
+function syncErrorText(){
+  const c=String(SYNC.err||"");
+  if(/admin-restricted|operation-not-allowed/.test(c))return "Anonymous sign-in is off. In Firebase: Authentication → Sign-in method → Anonymous → Enable.";
+  if(/permission-denied/.test(c))return "Firebase refused access. Publish the rules in Firestore → Rules, and check the database ID is (default).";
+  if(/not-found/.test(c))return "No database found. In Firebase create a Firestore database and leave its ID as (default).";
+  if(/api-key|invalid-api-key|app-not-authorized|unauthorized-domain/.test(c))return "The config block doesn't match this project. Turn sync off, copy the config again and paste it.";
+  if(/network|unavailable|failed-precondition|load/.test(c))return "Can't reach Firebase right now. Check the connection and try again.";
+  return "Can't reach sync."+(c?` (${c})`:"");
+}
 function syncStatusText(){
   const t=SYNC.when?SYNC.when.toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"}):"";
-  return {connecting:"Connecting…",synced:`Synced${t?" · "+t:""}`,saving:"Saving…",offline:"Offline. Changes will sync when you're back online.",error:"Can't reach sync. Check the setup and your connection.",off:"Off"}[SYNC.status]||"";
+  return {connecting:"Connecting…",synced:`Synced${t?" · "+t:""}`,saving:"Saving…",offline:"Offline. Changes will sync when you're back online.",error:syncErrorText(),off:"Off"}[SYNC.status]||"";
 }
 function parseConfig(txt){const o={};txt.replace(/(\w+)\s*:\s*["']([^"']+)["']/g,(_,k,v)=>{o[k]=v});return o.apiKey&&o.projectId?{apiKey:o.apiKey,authDomain:o.authDomain||o.projectId+".firebaseapp.com",projectId:o.projectId,appId:o.appId}:null}
-function newTripCode(){const a=new Uint8Array(18);crypto.getRandomValues(a);return Array.from(a,b=>"abcdefghjkmnpqrstuvwxyz23456789"[b%31]).join("")}
+function newTripCode(){const a=new Uint8Array(24);crypto.getRandomValues(a);return Array.from(a,b=>"abcdefghjkmnpqrstuvwxyz23456789"[b%31]).join("")}
 function inviteCode(){return "TVC1:"+btoa(unescape(encodeURIComponent(JSON.stringify({c:SYNC.cfg,t:SYNC.trip}))))}
 function syncCard(){
   if(!APP)return `<div class="card"><div class="small muted">Sync between our phones works in the installed app. Open it from your Home Screen, then come back to this section.</div></div>`;
   if(SYNC.cfg&&SYNC.trip)return `<div class="card"><div class="syncline"><span class="syncdot ${SYNC.status}"></span><span id="syncstat">${syncStatusText()}</span></div>
+     ${SYNC.status==="error"?'<div class="btns"><button class="btn ghost" data-act="retrysync">Try again</button></div>':""}
      <div class="small muted">Codes, notes, checkmarks, plan order and our journal sync to both our phones.</div>
      <div class="btns"><button class="btn" data-act="copyinvite">Copy invite for the other phone</button><button class="btn ghost" data-act="askstopsync">Turn off on this phone</button></div><div id="stopwrap"></div>
      <div class="small muted">Signed in as <b>${esc(ME||"no name yet")}</b> for the journal. <button class="linkbtn" data-act="renameme">Change</button></div></div>`;
@@ -1055,7 +1064,7 @@ function syncCard(){
 service cloud.firestore {
   match /databases/{database}/documents {
     match /trips/{trip}/{rest=**} {
-      allow read, write: if request.auth != null &amp;&amp; trip.size() &gt;= 20;
+      allow read, write: if request.auth != null &amp;&amp; trip.size() &gt;= 16;
     }
   }
 }</pre><button class="btn ghost" data-act="copyrules">Copy rules</button>
@@ -1064,6 +1073,7 @@ service cloud.firestore {
     <div id="joinbox" hidden><label class="fld" for="invbox">Paste the invite from the other phone<textarea id="invbox" placeholder="TVC1:..."></textarea></label><button class="btn" data-act="jointrip">Join trip</button></div></div>`;
 }
 function syncClick(act,b){
+  if(act==="retrysync"){SYNC.unsub.forEach(u=>u());SYNC.unsub=[];SYNC.on=false;SYNC.err=null;SYNC.status="connecting";render();startSync().then(()=>{render()});return true}
   if(act==="showsetup"){$("#setupbox").hidden=false;$("#joinbox").hidden=true;return true}
   if(act==="showjoin"){$("#joinbox").hidden=false;$("#setupbox").hidden=true;return true}
   if(act==="copyrules"){const t=$("#rulestxt").textContent;navigator.clipboard?.writeText(t).then(()=>toast("Rules copied")).catch(()=>toast("Select the rules and copy them"));return true}

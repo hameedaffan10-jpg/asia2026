@@ -30,8 +30,8 @@ To give her your confirmation codes and notes: in your app, Essentials → **Cop
 text it to her, and she taps **Restore from pasted text** and pastes. Repeat after you add codes.
 
 ## Street maps
-In the installed app, each day's map shows full street detail (OpenStreetMap via CARTO) when online.
-Before you fly, open Essentials and tap **Save street maps for offline** on Wi-Fi so they work with no signal.
+In the installed app, each day's map shows full street detail from OpenStreetMap when online.
+Before you fly, open each day once on Wi-Fi. The app keeps the street maps you've viewed for offline use.
 
 ## Sync between phones (Firebase, one-time setup)
 1. Go to console.firebase.google.com, sign in with Google, and create a project (Analytics off).
